@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker builf -t dheeraj4vv/docker-react -f dockerfile.dev .
+
+script:
+  - docker run dheeraj4vv/docker-react npm run test -- --coverage
